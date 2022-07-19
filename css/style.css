@@ -1,0 +1,455 @@
+:root {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    --brred-color: hsl(12, 88%, 59%);
+    --drblue-color: hsl(228, 39%, 23%);
+    --grblue-color: hsl(227, 12%, 61%);
+    --verydarkblue-color: hsl(233, 12%, 13%);
+    --palered: hsl(13, 100%, 96%);
+    --light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+    text-align: center;
+}
+
+section {
+    padding: 0 1em;
+}
+
+.container {
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    min-width: max-content;
+    padding: 1rem 2rem;
+    color: var(--palered, inherit);
+    background-color: var(--brred-color, inherit);
+    border-radius: 3em;
+    line-height: 1em;
+    box-shadow: 0px .7rem 1.3rem -.7rem var(--brred-color, inherit);
+    text-transform: capitalize;
+    transition: opacity 100ms ease-in;
+}
+
+.btn:hover,
+.btn:active {
+    opacity: .7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+    color: var(--drblue-color, inherit);
+}
+
+p {
+    color: var(--grblue-color, inherit);
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.home {
+    background-image: url("../images/bg-tablet-pattern.svg"), url("../images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: top -100px right -100px, right -250px top 350px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 3em 1em;
+    font-size: 13px;
+    position: relative;
+}
+
+header .btn {
+    display: none;
+    line-height: 1;
+}
+
+.nav-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    list-style: none;
+    color: var(--drblue-color, inherit);
+    position: absolute;
+    left: 1em;
+    right: 1em;
+    top: 100%;
+    bottom: 0;
+    margin: auto;
+    background-color: var(--light-gray, inherit);
+    transition: .3s bottom;
+    overflow: hidden;
+    box-shadow: 0 0 3px -2px gray;
+    border-radius: 3px;
+}
+
+.nav-container .nav-item {
+    max-width: max-content;
+    margin: 1rem;
+    font-weight: 600;
+    transition: 100ms color;
+}
+
+.nav-item:hover {
+    color: var(--grblue-color, inherit);
+}
+
+.nav label>* {
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+}
+
+.nav .close-icon {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked~label .burg-icon {
+    display: none;
+}
+
+#check:checked~label .close-icon {
+    display: revert;
+}
+
+#check:checked+.nav-container {
+    bottom: -17rem;
+}
+
+/* End header */
+
+/* Start home */
+.home .text-cont {
+    order: 2;
+}
+
+.home .text-cont :first-child {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.grid {
+    display: grid;
+    column-gap: 7.5%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.feat .head {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background-color: var(--palered, inherit);
+    border-radius: 3rem 0 0 3rem;
+    margin-right: -1rem;
+}
+
+.feat .head .count {
+    min-width: max-content;
+    padding: .5rem 1rem;
+    margin-right: 1em;
+    color: var(--palered, inherit);
+    background-color: var(--brred-color, inherit);
+    border-radius: 3em;
+    line-height: 1em;
+    text-transform: capitalize;
+}
+
+.recomandation {
+    text-align: center;
+}
+
+.recomandation .title {
+    font-size: 1.5em;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-color: transparent;
+}
+
+/* Recomandations Carosell */
+.recomandation .reco-container {
+    display: flex;
+    overflow-x: scroll;
+    padding-top: 30px;
+    margin-top: 3em;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-color: transparent transparent;
+}
+
+.recomandation .reco-container::-webkit-scrollbar {
+    display: none;
+}
+
+.reco-container .reco {
+    scroll-margin-top: 10em;
+    flex: 1 0 auto;
+    width: 600px;
+    max-width: calc(100% - 2rem);
+    padding: 0 2em;
+    scroll-snap-align: center;
+    margin: 1em;
+    background-color: var(--light-gray, inherit);
+    border-radius: 2px;
+}
+
+.reco .image {
+    display: inline-block;
+    width: 60px;
+    transform: translateY(-50%);
+}
+
+.reco p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* navegation of carosell */
+.recomandation .nav-cont {
+    user-select: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.recomandation .btn {
+    margin: 3em;
+}
+
+/* End section */
+/* Start Footer */
+
+.simple-wrap {
+    background-image: url(../images/bg-tablet-pattern.svg), url(../images/bg-tablet-pattern.svg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: bottom -50px left -50px, top -100px right -50px;
+}
+
+.cl-bg {
+    padding: 3em 2em;
+    background-color: #f25f3a83;
+}
+
+.simple-cont {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.simple-cont h4 {
+    color: #ffff;
+    font-size: 1.5em;
+    max-width: 14em;
+}
+
+.simple-cont .btn {
+    margin: 1em;
+}
+
+/* Contacts in footer */
+.contacts-wrap {
+    background-color: var(--verydarkblue-color, inherit);
+    padding: 3em 2em;
+}
+
+.contacts {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.contacts>* {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    max-height: 10em;
+}
+
+.contacts .nav {
+    list-style: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: var(--light-gray, inherit);
+    text-transform: capitalize;
+    margin: 2em 0;
+    width: 1fr;
+    flex: 1;
+}
+
+.contacts .nav>.nav-item {
+    margin: 0 1em;
+    transition: .1s ease-in-out;
+}
+
+.contacts .nav .nav-item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.contacts .nav .nav-item:hover {
+    color: var(--brred-color, inherit);
+}
+
+.contacts .social {
+    order: 5;
+    overflow: hidden;
+}
+
+.contacts .social .logo {
+    margin-bottom: 3em;
+}
+
+.contacts .social .soci-icon {
+    margin: 1em .5em;
+    transition: .1s opacity;
+    cursor: pointer;
+}
+
+.contacts .social .soci-icon:hover {
+    opacity: .7;
+}
+
+.contacts .email {
+    order: -1;
+}
+
+.contacts .email form {
+    display: flex;
+}
+
+.contacts .email form input {
+    padding: .5em 1em;
+    border-radius: 2em;
+    margin: 0 0.5em;
+    border: none;
+}
+
+.contacts .email form input:focus {
+    outline: none;
+}
+
+.contacts .email form input.go {
+    color: #fff;
+    background-color: var(--brred-color, inherit);
+    transition: .1s ease-in opacity;
+    cursor: pointer;
+}
+
+.contacts .email form input.go:hover {
+    opacity: .7;
+}
+
+@media (min-width:660px) {
+    body {
+        text-align: unset;
+    }
+
+    .container {
+        max-width: 800px;
+    }
+
+    .home {
+        background-size: 600px;
+        background-position: top -100px right -100px, left -200px bottom 200px;
+    }
+
+    .home .text-cont {
+        order: unset;
+    }
+
+    .home .text-cont p {
+        margin-right: 25%;
+    }
+
+    .feat .head {
+        background-color: initial;
+        margin: 0;
+    }
+}
+
+@media (min-width:815px) {
+    .container {
+        max-width: 950px;
+    }
+
+    header .nav-container {
+        flex-flow: row;
+        position: relative;
+        box-shadow: none;
+        background-color: initial;
+    }
+
+    header label {
+        display: none;
+    }
+
+    header .btn {
+        display: inline-block;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recomandation .nav-cont {
+        display: none;
+    }
+
+
+    .simple-cont {
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    .contacts {
+        flex-flow: row;
+    }
+
+    .contacts>* {
+        align-content: space-between;
+    }
+
+    .contacts .nav {
+        margin: auto 2em;
+        align-content: space-between;
+    }
+
+    .contacts .social {
+        order: 0;
+    }
+
+    .contacts .email {
+        order: 0;
+    }
+}
+
+
+@media (min-width:1200) {
+    .container {
+        max-width: 1100px;
+    }
+}
